@@ -6,16 +6,25 @@ const dbConnect = require('./utils/dbConnect');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
-
-app.use(express.json());
-app. use(express.urlencoded ({extended: true}));
-app.use(cookieParser());
-app.use(cors)
-
 const corsOptions = {
     origin : "",
     credential :true
 }
+
+
+app.use(express.json());
+app. use(express.urlencoded ({extended: true}));
+app.use(cookieParser());
+app.use(cors())
+
+
+const userRouter = require('./routes/userRoutes');
+
+
+
+
+app.use('/',userRouter)
+
 
 
 app.get("/",(req,res)=>{
