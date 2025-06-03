@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const dbConnect = require('./db/dbConnect');
+const dbConnect = require('./utils/dbConnect');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
