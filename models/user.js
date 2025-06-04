@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
     number: {
         type: Number,
         required: true,
-        unique : true
+        unique: true
     },
     password: {
         type: String,
@@ -27,19 +27,19 @@ const userSchema = new mongoose.Schema({
             message: 'enum validator failed for path `{PATH}` with value `{VALUE}`'
         }
     },
-    profile: {
-        profilePhoto: {
-            type: String,
-            default: "",
-        },
-        bio: {
-            type: String,
-        },
-        skills: [String],
 
-    }
+    profilePhoto: {
+        type: String,
+        default: "",
+    },
+    bio: {
+        type: String,
+    },
+    skills: [String],
+
+
 })
 
-const User = new mongoose.model("User",userSchema);
+const User = new mongoose.model("User", userSchema);
 
 module.exports = User;
